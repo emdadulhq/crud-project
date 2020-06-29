@@ -16,25 +16,25 @@
 		<div class="card">
 			<div class="card-body">
 				<h2>Sign Up</h2>
-				<form action="">
+				<form action="" method="GET">
 					<div class="form-group">
-						<label for="">Name</label>
-						<input class="form-control" type="text">
+						<label for="">Student Name</label>
+						<input name="name" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Email</label>
-						<input class="form-control" type="text">
+						<input name="email" class="form-control" type="text">
 					</div>
 					<div class="form-group">
 						<label for="">Cell</label>
-						<input class="form-control" type="text">
+						<input name="cell" class="form-control" type="text">
 					</div>
 					<div class="form-group">
-						<label for="">Date of Birth</label>
-						<input class="form-control" type="date">
+						<label for="dob">Date of Birth</label>
+						<input name="" class="form-control" type="date">
 					</div>
 					<div class="form-group">
-						<input class="btn btn-primary" type="submit" value="Sign Up">
+						<input name="send" class="btn btn-primary" type="submit" value="Sign Up">
 					</div>
 				</form>
 			</div>
