@@ -11,12 +11,30 @@
 <body>
 	
 	
+	
+	<?php
+	/*
+	*This app are made for student data
+	*/
+	if (isset($_POST['send'])){
+		//get value from the from
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$cell = $_POST['cell'];
+		$dob = $_POST['dob'];
+	}
+	
+	
+	
+	?>
+	
+	
 
 	<div class="wrap shadow">
 		<div class="card">
 			<div class="card-body">
 				<h2>Sign Up</h2>
-				<form action="" method="GET">
+				<form action="" method="POST">
 					<div class="form-group">
 						<label for="">Student Name</label>
 						<input name="name" class="form-control" type="text">
