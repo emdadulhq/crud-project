@@ -24,9 +24,19 @@
 		$dob = $_POST['dob'];
 		
 		
+		//Date of birth validation
+		if($dob >= 1990-01-01 && $dob <= 2000-01-01){
+			$age_val = true;
+		}else{
+			$age_val = false;
+		}
+		
+		
 		//empty field check for form
 		if(empty($name) || empty($email) || empty($cell) || empty($dob)){
 			$mess = "<p class=\"alert alert-danger\"> সবগুলো ঘর অবশ্যই পূরণীয় (অত্যাবশ্যক)! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}elseif($age_val == false){
+			$mess = "<p class=\"alert alert-warning\"> জন্মতারিখ ০১-০১-১৯৯০ থেকে ০১-০১-২০০০ এর মধ্যে নেই!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}else{
 			$mess = "<p class=\"alert alert-success\"> আপনার প্রদেয় তথ্য সফল ভাবে সংরক্ষন করা হয়েছে! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}
