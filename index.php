@@ -44,7 +44,9 @@
 		if(empty($name) || empty($email) || empty($cell) || empty($dob)){
 			$mess = "<p class=\"alert alert-danger\"> সবগুলো ঘর অবশ্যই পূরণীয় (অত্যাবশ্যক)! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif($cell_val == false){
-			$mess = "<p class=\"alert alert-warning\"> মোবাইল নম্বর ১২ ডিজিট হতে হবে!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+			$mess = "<p class=\"alert alert-warning\"> আপনার প্রদানকৃত মোবাইল নম্বরটি সঠিক নয়! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}elseif(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
+			$mess = "<p class=\"alert alert-danger\"> আপনার প্রদানকৃত ইমেইল এড্রেসটি সঠিক নয়!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif($age_val == false){
 			$mess = "<p class=\"alert alert-warning\"> জন্মতারিখ ০১-০১-১৯৯০ থেকে ০১-০১-২০০০ এর মধ্যে নেই!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}else{
