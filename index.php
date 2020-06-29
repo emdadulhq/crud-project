@@ -41,8 +41,19 @@
 	<div class="wrap shadow">
 		<div class="card">
 			<div class="card-body">
-				<h2>Sign Up</h2>
+				<h2>Student Sign Up Form</h2>
+				<h3 class="bg bg-danger text-light"> Role for student registration:</h3>
+				<ul class="border border-danger">
+					<li> অবশ্যই সম্পুর্ন নাম লিখতে হবে। </li>
+					<li> অবশ্যই ১১ ডিজিটের মোবাইল নম্বর থাকতে হবে। </li>
+					<li> অবশ্যই কোডার্স ট্রাস্ট এর ইমেইল এড্রেস থাকতে হবে। </li>
+					<li> জন্মতারিখ অবশ্যই ০১-০১-১৯৯০ থেকে ০১-০১-২০০০ এর মধ্যে হতে হবে। </li>
+				</ul>
+				
+				
+				
 				<?php
+				//for shown error & success massage
 				if(isset($mess)){
 					echo $mess;
 				}
