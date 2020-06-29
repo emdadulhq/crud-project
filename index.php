@@ -22,6 +22,14 @@
 		$email = $_POST['email'];
 		$cell = $_POST['cell'];
 		$dob = $_POST['dob'];
+		
+		
+		//empty field check for form
+		if(empty($name) || empty($email) || empty($cell) || empty($dob)){
+			$mess = "<p class=\"alert alert-danger\"> সবগুলো ঘর অবশ্যই পূরণীয় (অত্যাবশ্যক)! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}else{
+			$mess = "<p class=\"alert alert-success\"> আপনার প্রদেয় তথ্য সফল ভাবে সংরক্ষন করা হয়েছে! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}
 	}
 	
 	
@@ -34,6 +42,12 @@
 		<div class="card">
 			<div class="card-body">
 				<h2>Sign Up</h2>
+				<?php
+				if(isset($mess)){
+					echo $mess;
+				}
+				
+				?>
 				<form action="" method="POST">
 					<div class="form-group">
 						<label for="">Student Name</label>
@@ -48,8 +62,8 @@
 						<input name="cell" class="form-control" type="text">
 					</div>
 					<div class="form-group">
-						<label for="dob">Date of Birth</label>
-						<input name="" class="form-control" type="date">
+						<label for="">Date of Birth</label>
+						<input name="dob" class="form-control" type="date">
 					</div>
 					<div class="form-group">
 						<input name="send" class="btn btn-primary" type="submit" value="Sign Up">
