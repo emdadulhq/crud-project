@@ -31,10 +31,20 @@
 			$age_val = false;
 		}
 		
+		//Cell validation section 
+		if(strlen($cell)==12){
+			$cell_val = true;
+		}else{
+			$cell_val = false;
+		}
+		
+		
 		
 		//empty field check for form
 		if(empty($name) || empty($email) || empty($cell) || empty($dob)){
 			$mess = "<p class=\"alert alert-danger\"> সবগুলো ঘর অবশ্যই পূরণীয় (অত্যাবশ্যক)! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}elseif($cell_val == false){
+			$mess = "<p class=\"alert alert-warning\"> মোবাইল নম্বর ১২ ডিজিট হতে হবে!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif($age_val == false){
 			$mess = "<p class=\"alert alert-warning\"> জন্মতারিখ ০১-০১-১৯৯০ থেকে ০১-০১-২০০০ এর মধ্যে নেই!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}else{
