@@ -32,12 +32,20 @@
 		}
 		
 		//Cell validation section 
-		if(strlen($cell)==12){
+		if(strlen($cell)==11){
 			$cell_val = true;
 		}else{
 			$cell_val = false;
 		}
 		
+		//Email validation
+		$mail_part = explode('@','$email');
+		$mail_end = end($mail_part);
+		if($mail_end == 'coderstrust.com'){
+			$mail_validate = true;
+		}else{
+			$mail_validate = false;
+		}
 		
 		
 		//empty field check for form
@@ -45,6 +53,8 @@
 			$mess = "<p class=\"alert alert-danger\"> সবগুলো ঘর অবশ্যই পূরণীয় (অত্যাবশ্যক)! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif($cell_val == false){
 			$mess = "<p class=\"alert alert-warning\"> আপনার প্রদানকৃত মোবাইল নম্বরটি সঠিক নয়! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+		}elseif($mail_validate == false){
+			$mess = "<p class=\"alert alert-warning\"> আপনার প্রদানকৃত ইমেইল এড্রেসটি Coderstrust এর নয়!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif(filter_var($email, FILTER_VALIDATE_EMAIL)==false){
 			$mess = "<p class=\"alert alert-danger\"> আপনার প্রদানকৃত ইমেইল এড্রেসটি সঠিক নয়!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}elseif($age_val == false){
