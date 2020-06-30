@@ -40,9 +40,9 @@
 		}
 		
 		//Email validation
-		$mail_part = explode('@','$email');
+		$mail_part = explode('@', $email);
 		$mail_end = end($mail_part);
-		if($mail_end == 'coderstrust.com'){
+		if($mail_end == 'ctbd.com'){
 			$mail_validate = true;
 		}else{
 			$mail_validate = false;
@@ -61,7 +61,7 @@
 		}elseif($age_val == false){
 			$mess = "<p class=\"alert alert-warning\"> জন্মতারিখ ০১-০১-১৯৯০ থেকে ০১-০১-২০০০ এর মধ্যে নেই!! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 		}else{
-			$mess = "<p class=\"alert alert-success\"> আপনার প্রদেয় তথ্য সফল ভাবে সংরক্ষন করা হয়েছে! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+			header('location:congrats.php');
 		}
 	}
 	
@@ -129,5 +129,6 @@
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+	
 </body>
 </html>
